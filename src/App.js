@@ -1,10 +1,11 @@
 import React from 'react';
+import Layout from 'layout';
 
 import './App.css';
 
-function App() {
+function App(props) {
   return (
-    <div>First step...</div>
+    <Layout />
   );
 }
 
