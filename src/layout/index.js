@@ -1,30 +1,21 @@
 import React from 'react';
 
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/styles';
-
 import DataVisualization from './DataVisualization';
 import Formulas from './Formulas';
 
-const useStyles = makeStyles(theme => ({
-  layout: {
-    height: '100vh',
-  },
-}));
+import SplitterLayout from 'react-splitter-layout';
+import 'react-splitter-layout/lib/index.css';
 
-const Layout = props => {
-  const classes = useStyles();
-
-  return (
-    <Grid 
-      container
-      direction="row"
-      className={classes.layout}
-    >
-      <Grid item xs={9}><DataVisualization /></Grid>
-      <Grid item xs={3}><Formulas /></Grid>
-    </Grid>
-  );
-}
+const Layout = _ => (
+  <SplitterLayout
+    percentage
+    primaryIndex={0}
+    secondaryInitialSize={30}
+    primaryMinSize={50}
+  >
+    <DataVisualization />
+    <Formulas />
+  </SplitterLayout>
+);
 
 export default Layout;

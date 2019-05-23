@@ -31,7 +31,7 @@ function DataVisualisation(props) {
 
   return (
     <>
-      <Tabs 
+      <Tabs
         value={activeTab} 
         variant="fullWidth" 
         onChange={handleTabChange}

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Grid from '@material-ui/core/Grid';
-
 import { makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
+
+import SplitterLayout from 'react-splitter-layout';
 
 const useStyles = makeStyles(theme => {
   const border = '1px solid lightgray';
@@ -13,16 +13,15 @@ const useStyles = makeStyles(theme => {
   return {
     wrapper: {
       height: '100%',
-      borderLeft: border,
     },
     header: {
       height: footerHeaderHeight,
     },
     contentWrapper: {
+      position: 'relative',
       height: `calc(100% - ${footerHeaderHeight * 2}px)`,
     },
     content: {
-      height: '50%',
       borderTop: border,
     },
     links: {
@@ -39,10 +38,12 @@ const Formulas = props => {
     <div className={classes.wrapper}>
       <Typography variant="h5" className={classes.header}>Formulas</Typography>
 
-      <Grid container direction="column" className={classes.contentWrapper}>
-        <Grid item className={classes.content}>Editor</Grid>
-        <Grid item className={classes.content}>Settings</Grid>
-      </Grid>
+      <div className={classes.contentWrapper}>
+        <SplitterLayout vertical>
+          <div className={classes.content}>Editor</div>
+          <div className={classes.content}>Settings</div>
+        </SplitterLayout>
+      </div>
 
       <div className={classes.links}>Links</div>
     </div>
