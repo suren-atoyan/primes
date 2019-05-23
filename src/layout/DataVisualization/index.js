@@ -5,14 +5,17 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { makeStyles } from '@material-ui/styles';
 
+import Graphics from 'sections/Graphics';
+import Lists from 'sections/Lists';
+
 const tabs = {
   graphics: 'graphics',
   lists: 'lists',
 };
 
 const contents = {
-  [tabs.graphics]: () => <h4>Graphics</h4>,
-  [tabs.lists]: () => <h4>Lists</h4>,
+  [tabs.graphics]: Graphics,
+  [tabs.lists]: Lists,
 };
 
 const useStyles = makeStyles(theme => ({

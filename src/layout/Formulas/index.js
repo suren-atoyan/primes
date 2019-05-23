@@ -5,6 +5,10 @@ import Typography from '@material-ui/core/Typography';
 
 import SplitterLayout from 'react-splitter-layout';
 
+import Editor from 'sections/Editor';
+import Settings from 'sections/Settings';
+import Links from 'sections/Links';
+
 const useStyles = makeStyles(theme => {
   const border = '1px solid lightgray';
 
@@ -40,12 +44,12 @@ const Formulas = props => {
 
       <div className={classes.contentWrapper}>
         <SplitterLayout vertical>
-          <div className={classes.content}>Editor</div>
-          <div className={classes.content}>Settings</div>
+          <div className={classes.content}><Editor /></div>
+          <div className={classes.content}><Settings /></div>
         </SplitterLayout>
       </div>
 
-      <div className={classes.links}>Links</div>
+      <div className={classes.links}><Links /></div>
     </div>
   );
 }
