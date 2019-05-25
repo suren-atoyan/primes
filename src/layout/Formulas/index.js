@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 
 import SplitterLayout from 'react-splitter-layout';
 
-import Editor from 'sections/Editor';
+import CodeEditor from 'sections/CodeEditor';
 import Settings from 'sections/Settings';
 import Links from 'sections/Links';
 
@@ -26,6 +26,7 @@ const useStyles = makeStyles(theme => {
       height: `calc(100% - ${footerHeaderHeight * 2}px)`,
     },
     content: {
+      height: '100%',
       borderTop: border,
     },
     links: {
@@ -44,7 +45,7 @@ const Formulas = props => {
 
       <div className={classes.contentWrapper}>
         <SplitterLayout vertical>
-          <div className={classes.content}><Editor /></div>
+          <div className={classes.content}><CodeEditor /></div>
           <div className={classes.content}><Settings /></div>
         </SplitterLayout>
       </div>
