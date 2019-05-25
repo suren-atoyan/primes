@@ -8,6 +8,11 @@ const config = {
     primeMaxBoundaries: n => n * Math.log(n) + n * (Math.log(Math.log(n)) - 1),
   },
 
+  urls: {
+    monaco_loader: '/monaco-editor/vs/loader.js',
+    monaco_base: '/monaco-editor/vs',
+  },
+
   graphics: {
     lineChartProps: {
       margin: { top: 10, right: 10, bottom: 30, left: 30 },
@@ -47,6 +52,11 @@ const config = {
         ],
       }],
     },
+  },
+
+  range: {
+    min: 1,
+    max: 100,
   },
 };
 
