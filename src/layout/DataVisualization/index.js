@@ -20,7 +20,8 @@ const contents = {
 
 const useStyles = makeStyles(theme => ({
   content: {
-    padding: 2,
+    height: 'calc(100% - 50px)',
+    overflow: 'auto',
   },
 }));
 
