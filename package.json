@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@material-ui/styles": "^3.0.0-alpha.10",
+    "@nivo/line": "^0.58.0",
     "classnames": "^2.2.6",
     "overmind-react": "^18.1.0",
     "react": "^16.8.6",
