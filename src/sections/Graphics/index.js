@@ -1,7 +1,25 @@
 import React from 'react';
 
-const Graphics = _ => (
-  <h4>Graphics</h4>
-);
+import { useStore } from 'store';
+import { transformToChartData } from 'utils';
+
+import LineChart from 'components/LineChart';
+
+const Graphics = _ => {
+
+  const { state: {
+    primeNumbers,
+    primeMinBoundaries,
+    primeMaxBoundaries,
+    custom,
+  }} = useStore();
+
+  return <LineChart data={transformToChartData({
+    primeNumbers,
+    primeMinBoundaries,
+    primeMaxBoundaries,
+    custom,
+  })} />;
+};
 
 export default Graphics;
