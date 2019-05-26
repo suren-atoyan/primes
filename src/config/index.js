@@ -67,7 +67,6 @@ const config = {
       // it should be a function based on "n"
       // and sould try to return the nth prime number
       // something like this:
-      // Math.ceil(2**(1.5 * Math.log2(n)) + Math.log2(n) + 1 - 2**Math.log2(n))
 
       const getPrime = n => {
         const x = Math.log2(n);
