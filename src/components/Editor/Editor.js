@@ -108,15 +108,15 @@ Editor.propTypes = {
   value: PropTypes.string,
   language: PropTypes.string,
   options: PropTypes.object,
-  valueGetter: PropTypes.func.isRequired,
-  editorDidMount: PropTypes.func.isRequired,
+  valueGetter: PropTypes.func,
+  editorDidMount: PropTypes.func,
   theme: PropTypes.string,
 };
 
 Editor.defaultProps = {
   width: '100%',
   height: '100%',
-  value: 'console.log(\'Make the world a little bit better :)\')',
+  value: '',
   language: 'javascript',
   options: {},
   editorDidMount: _ => {}
