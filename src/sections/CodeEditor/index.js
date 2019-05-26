@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+
+import { useStore } from 'store';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -21,13 +23,27 @@ const useStyles = makeStyles(theme => ({
 
 const CodeEditor = _ => {
   const classes = useStyles();
+  const [isEditorReady, setIsEditorReady] = useState(false);
+  const getEditorValue = useRef();
+  const { actions: { setCustomFormula } } = useStore();
+
+  function editorDidMount(getter) {
+    getEditorValue.current = getter;
+    setIsEditorReady(true);
+  }
+
+  function handleRun() {
+    setCustomFormula(getEditorValue.current());
+  }
 
   return <div className="full-size">
-    <Editor />
+    <Editor
+      editorDidMount={editorDidMount}
+    />
     <div className={classes.buttonsWrapper}>
-      <Run />
-      <Save />
-      <Share />
+      <Run disabled={!isEditorReady} onClick={handleRun} />
+      <Save disabled={!isEditorReady} />
+      <Share disabled={!isEditorReady} />
     </div>
   </div>;
 };

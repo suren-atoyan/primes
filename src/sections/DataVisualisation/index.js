@@ -13,7 +13,7 @@ const DataVisualisation = props => {
     primeNumbers: { show: showPrimes },
     primeMinBoundaries: { show: showPrimeMinBoundaries },
     primeMaxBoundaries: { show: showPrimeMaxBoundaries },
-    custom: { showCustom },
+    custom: { show: showCustom, formula },
     range: { from, to },
   }} = useStore();
 
@@ -26,7 +26,10 @@ const DataVisualisation = props => {
   data.primeMaxBoundaries = useMemo(_ => showPrimeMaxBoundaries &&
     calcPrimes(primeBoundaries.max, from, to), [from, to, showPrimeMaxBoundaries]);
   data.custom = useMemo(_ => showCustom &&
-    calcPrimes(primeBoundaries.min, from, to), [from, to, showCustom]);
+    // it's not gonna be 'eval' in future :D
+    // don't worry, we will run it in a separate thread
+    // it's just for demo
+    calcPrimes(eval(formula), from, to), [from, to, showCustom, formula]);
 
   return <>
     {

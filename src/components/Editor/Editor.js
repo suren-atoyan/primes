@@ -83,7 +83,6 @@ Editor.propTypes = {
   value: PropTypes.string,
   language: PropTypes.string,
   options: PropTypes.object,
-  valueGetter: PropTypes.func,
   editorDidMount: PropTypes.func,
   theme: PropTypes.string,
 };
