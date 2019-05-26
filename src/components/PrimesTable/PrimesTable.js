@@ -20,7 +20,7 @@ const PrimesTable = ({ data: {
         <TableRow>
           <TableCell>nth</TableCell>
           {primeMinBoundaries && <TableCell align="right">n⋅ln(n) + n⋅(ln(ln(n)) − 1)</TableCell>}
-          {primeNumbers && <TableCell align="right">nth prime number</TableCell>}
+          {primeNumbers && <TableCell data-prime align="right">nth prime number</TableCell>}
           {primeMaxBoundaries && <TableCell align="right">n⋅ln(n) + n⋅ln(ln(n)</TableCell>}
           {custom && <TableCell align="right">Custom</TableCell>}
         </TableRow>
