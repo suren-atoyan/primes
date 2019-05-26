@@ -1,3 +1,4 @@
 import useMount from './useMount';
+import useUpdate from './useUpdate';
 
-export { useMount };
+export { useMount, useUpdate };
