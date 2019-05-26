@@ -58,6 +58,23 @@ const config = {
     min: 1,
     max: 100,
   },
+
+  editor: {
+    language: 'javascript',
+    value: `
+      // write you formula here
+      // as a function called getPrime
+      // it should be a function based on "n"
+      // and sould try to return the nth prime number
+      // something like this:
+      // Math.ceil(2**(1.5 * Math.log2(n)) + Math.log2(n) + 1 - 2**Math.log2(n))
+
+      const getPrime = n => {
+        const x = Math.log2(n);
+        return Math.ceil(2**(1.5 * x) + x + 1 - 2**x);
+      }
+    `.trim().replace(/^ {6}/gm, ''),
+  },
 };
 
 export default config;
