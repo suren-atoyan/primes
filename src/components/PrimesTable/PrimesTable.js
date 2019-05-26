@@ -19,20 +19,20 @@ const PrimesTable = ({ data: {
       <TableHead>
         <TableRow>
           <TableCell>nth</TableCell>
-          {primeMinBoundaries.show && <TableCell align="right">n⋅ln(n) + n⋅(ln(ln(n)) − 1)</TableCell>}
-          {primeNumbers.show && <TableCell align="right">nth prime number</TableCell>}
-          {primeMaxBoundaries.show && <TableCell align="right">n⋅ln(n) + n⋅ln(ln(n)</TableCell>}
-          {custom.show && <TableCell align="right">Custom</TableCell>}
+          {primeMinBoundaries && <TableCell align="right">n⋅ln(n) + n⋅(ln(ln(n)) − 1)</TableCell>}
+          {primeNumbers && <TableCell align="right">nth prime number</TableCell>}
+          {primeMaxBoundaries && <TableCell align="right">n⋅ln(n) + n⋅ln(ln(n)</TableCell>}
+          {custom && <TableCell align="right">Custom</TableCell>}
         </TableRow>
       </TableHead>
       <TableBody>
-        {primeNumbers.list.map((prime, i) => (
+        {primeNumbers && primeNumbers.map((prime, i) => (
           <TableRow key={i}>
             <TableCell component="th" scope="row">{i + 1}</TableCell>
-            {primeMinBoundaries.show && <TableCell align="right">{primeMinBoundaries.list[i] || '-'}</TableCell>}
-            {primeNumbers.show && <TableCell data-prime align="right">{prime}</TableCell>}
-            {primeMaxBoundaries.show && <TableCell align="right">{primeMaxBoundaries.list[i] || '-'}</TableCell>}
-            {custom.show && <TableCell align="right">{custom.list[i] || '-'}</TableCell>}
+            {primeMinBoundaries && <TableCell align="right">{primeMinBoundaries[i] || '-'}</TableCell>}
+            {primeNumbers && <TableCell data-prime align="right">{prime}</TableCell>}
+            {primeMaxBoundaries && <TableCell align="right">{primeMaxBoundaries[i] || '-'}</TableCell>}
+            {custom && <TableCell align="right">{custom[i] || '-'}</TableCell>}
           </TableRow>
         ))}
       </TableBody>

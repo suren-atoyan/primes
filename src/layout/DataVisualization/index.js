@@ -5,17 +5,11 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { makeStyles } from '@material-ui/styles';
 
-import Graphics from 'sections/Graphics';
-import Lists from 'sections/Lists';
+import Container from 'sections/DataVisualisation';
 
 const tabs = {
   graphics: 'graphics',
   lists: 'lists',
-};
-
-const contents = {
-  [tabs.graphics]: Graphics,
-  [tabs.lists]: Lists,
 };
 
 const useStyles = makeStyles(theme => ({
@@ -31,8 +25,6 @@ function DataVisualisation(props) {
 
   const handleTabChange = (event, tabValue) => setActiveTab(tabValue);
 
-  const Comp = contents[activeTab];
-
   return (
     <>
       <Tabs
@@ -44,7 +36,7 @@ function DataVisualisation(props) {
         <Tab label="Lists" value={tabs.lists} />
       </Tabs>
 
-      <Grid container className={classes.content}><Comp /></Grid>
+      <Grid container className={classes.content}><Container active={activeTab} /></Grid>
     </>
   );
 }

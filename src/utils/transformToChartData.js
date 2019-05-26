@@ -1,3 +1,28 @@
+const genPrimeNumbersChartData = list => ({
+  id: 'primes',
+  color: 'hsl(109, 70%, 50%)',
+  data: list.map((item, i) => ({ x: i + 1, y: item })),
+});
+
+const genPrimeMinBoundariesChartData = list => ({
+  id: 'n⋅ln(n) + n⋅(ln(ln(n)) − 1)',
+  color: 'hsl(338, 70%, 50%)',
+  data: list.map((item, i) => ({ x: i + 1, y: item })),
+});
+
+const genPrimeMaxBoundariesChartData = list => ({
+  id: 'n⋅ln(n) + n⋅ln(ln(n)',
+  color: 'hsl(168, 70%, 50%)',
+  data: list.map((item, i) => ({ x: i + 1, y: item })),
+});
+
+const genCustomChartData = list => ({
+  id: 'custom',
+  color: 'red',
+  data: list.map((item, i) => ({ x: i + 1, y: item })),
+});
+
+
 const transformToChartData = ({
   primeNumbers,
   primeMinBoundaries,
@@ -6,29 +31,10 @@ const transformToChartData = ({
 }) => {
   const transformedChartData = [];
 
-  primeNumbers.show && transformedChartData.push({
-    id: 'primes',
-    color: 'hsl(109, 70%, 50%)',
-    data: primeNumbers.list.map((item, i) => ({ x: i + 1, y: item })),
-  });
-
-  primeMinBoundaries.show && transformedChartData.push({
-    id: 'n⋅ln(n) + n⋅(ln(ln(n)) − 1)',
-    color: 'hsl(338, 70%, 50%)',
-    data: primeMinBoundaries.list.map((item, i) => ({ x: i + 1, y: item })),
-  });
-
-  primeMaxBoundaries.show && transformedChartData.push({
-    id: 'n⋅ln(n) + n⋅ln(ln(n)',
-    color: 'hsl(168, 70%, 50%)',
-    data: primeMaxBoundaries.list.map((item, i) => ({ x: i + 1, y: item })),
-  });
-
-  custom.show && transformedChartData.push({
-    id: 'custom',
-    color: 'red',
-    data: custom.list.map((item, i) => ({ x: i + 1, y: item })),
-  });
+  primeNumbers && transformedChartData.push(genPrimeNumbersChartData(primeNumbers));
+  primeMinBoundaries && transformedChartData.push(genPrimeMinBoundariesChartData(primeMinBoundaries));
+  primeMaxBoundaries && transformedChartData.push(genPrimeMaxBoundariesChartData(primeMaxBoundaries));
+  custom && transformedChartData.push(genCustomChartData(custom));
 
   // those checks we need to avoid nivo chart
   // exeptions. In future it'll can be removed
