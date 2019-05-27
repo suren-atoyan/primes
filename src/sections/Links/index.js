@@ -1,26 +1,11 @@
 import React from 'react';
 
-import { makeStyles } from '@material-ui/styles';
-import classNames from 'classnames';
 import Button from '@material-ui/core/Button';
 
+import useStyles from './useStyles';
+import classNames from 'classnames';
+
 import config from 'config';
-
-const useStyles = makeStyles(theme => ({
-  wrapper: {
-    display: 'flex',
-
-    '& button': {
-      marginRight: 10,
-    },
-
-    '& img': {
-      width: 25,
-      height: 25,
-      marginRight: 5,
-    },
-  },
-}));
 
 const Links = _ => {
   const classes = useStyles();
