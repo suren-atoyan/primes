@@ -11,8 +11,8 @@ const config = {
   },
 
   urls: {
-    monaco_loader: '/monaco-editor/vs/loader.js',
-    monaco_base: '/monaco-editor/vs',
+    monacoLoader: '/monaco-editor/vs/loader.js',
+    monacoBase: '/monaco-editor/vs',
   },
 
   graphics: {
@@ -62,10 +62,10 @@ const config = {
   },
 
   custom: `
-    // write you formula here as a function named "${defaultFnName}".
-    // It should be a function based on "n"
-    // and sould try to return the nth prime number
-    // something like this:
+    // write your formula here as a function named "${defaultFnName}".
+    // It should be a function depending on "n"
+    // and should try to return the nth prime number.
+    // Something like this: (it's just an example)
 
     const { ceil, log2 } = Math;
 
@@ -74,7 +74,7 @@ const config = {
       return ceil(res);
     }
 
-    // note that it can be other function too, not only something related
+    // note that it can be another function too, not only something related
     // to prime, just name it "${defaultFnName}". (and you can remove all comments and everything else here :))
   `.trim().replace(/^ {4}/gm, ''),
 
@@ -84,6 +84,16 @@ const config = {
   },
 
   defaultFnName,
+
+  snackbarPosition: { vertical: 'top', horizontal: 'right' },
+
+  maxCodeLength: 2000,
+
+  messages: {
+    switchCustomToOn: `To see the result switch “custom” to on`,
+    save: 'Your application state is successfully saved',
+    codeIsTooLong: 'Your code is too long',
+  },
 };
 
 export default config;

@@ -15,10 +15,7 @@ import Reset from './components/buttons/Reset';
 import ShareChip from './components/ShareChip';
 
 import { resetApp } from 'utils';
-
-const snackbarPosition = { vertical: 'top', horizontal: 'right' };
-const runMessage = `Your source executed, but for see result switch on 'custom'`;
-const saveMessage = `Your state of application is successfully saved`;
+import config from 'config';
 
 const Header = _ => {
   const classes = useStyles();
@@ -28,13 +25,18 @@ const Header = _ => {
   const { state: { custom, isEditorReady }, actions: { setCustomFormula, createSnapshot } } = useStore();
 
   function handleRun() {
-    setCustomFormula(getEditorValue());
-    !custom.show && setMessage(runMessage);
+    const code = getEditorValue();
+    if (code.length > config.maxCodeLength) {
+      setMessage(config.messages.codeIsTooLong);
+    } else {
+      setCustomFormula(code);
+      !custom.show && setMessage(config.messages.switchCustomToOn);
+    }
   }
 
   function handleSave() {
     createSnapshot();
-    setMessage(saveMessage);
+    setMessage(config.messages.save);
   }
 
   function handleShare(event) {
@@ -55,8 +57,8 @@ const Header = _ => {
     </div>
     <Snackbar
       message={message}
-      anchorOrigin={snackbarPosition}
-      autoHideDuration={1850}
+      anchorOrigin={config.snackbarPosition}
+      autoHideDuration={1300}
       onClose={_ => setMessage('')}
       open={!!message}
     />
