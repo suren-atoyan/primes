@@ -27,6 +27,8 @@ const initialState = {
     from: 1,
     to: 25,
   },
+
+  isEditorReady: false,
 };
 
 export const store = createOvermind({
@@ -61,7 +63,11 @@ export const store = createOvermind({
 
     saveState({ state }) {
       saveInUrl(JSON.stringify(state));
-    }
+    },
+
+    setIsEditorReady({ state }, isReady) {
+      state.isEditorReady = isReady;
+    },
   },
 });
 
