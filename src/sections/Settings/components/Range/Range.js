@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import classNames from 'classnames';
 import throttle from 'lodash.throttle';
 
-import { useMount } from 'hooks';
+import { useMount } from 'utils/hooks';
 import config from 'config';
 
 const useStyles = makeStyles(theme => ({
