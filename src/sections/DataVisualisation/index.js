@@ -17,7 +17,7 @@ const DataVisualisation = props => {
     range: { from, to },
   }} = useStore();
 
-  const data = {};
+  const data = { from, to };
 
   data.primeNumbers = useMemo(_ => showPrimes &&
     calcPrimes(getPrime, from, to), [from, to, showPrimes])

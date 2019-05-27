@@ -13,6 +13,8 @@ const PrimesTable = ({ data: {
   primeMinBoundaries,
   primeMaxBoundaries,
   custom,
+  from,
+  to,
 }}) => (
   <Paper elevation={0} className="full-width">
     <Table>
@@ -26,7 +28,7 @@ const PrimesTable = ({ data: {
         </TableRow>
       </TableHead>
       <TableBody>
-        {primeNumbers && primeNumbers.map((prime, i) => (
+        {Array(to - from).fill().map((prime, i) => (
           <TableRow key={i}>
             <TableCell component="th" scope="row">{i + 1}</TableCell>
             {primeMinBoundaries && <TableCell align="right">{primeMinBoundaries[i] || '-'}</TableCell>}
