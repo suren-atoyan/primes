@@ -2,6 +2,7 @@ import { createOvermind } from 'overmind';
 import { createHook } from 'overmind-react';
 
 import { saveInUrl, parseState } from 'utils';
+import config from 'config';
 
 const sharedState = parseState();
 
@@ -20,7 +21,7 @@ const initialState = {
 
   custom: {
     show: false,
-    formula: `n => Math.ceil(2**(1.5 * Math.log2(n)) + Math.log2(n) + 1 - 2**Math.log2(n))`,
+    formula: config.custom,
   },
 
   range: {
