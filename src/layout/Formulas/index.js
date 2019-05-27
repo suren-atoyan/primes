@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { makeStyles } from '@material-ui/styles';
-import Typography from '@material-ui/core/Typography';
 
 import SplitterLayout from 'react-splitter-layout';
 
+import Header from 'sections/Header';
 import CodeEditor from 'sections/CodeEditor';
 import Settings from 'sections/Settings';
 import Links from 'sections/Links';
@@ -41,7 +41,7 @@ const Formulas = props => {
 
   return (
     <div className={classes.wrapper}>
-      <Typography variant="h5" className={classes.header}>Formulas</Typography>
+      <div className={classes.header}><Header /></div>
 
       <div className={classes.contentWrapper}>
         <SplitterLayout vertical>

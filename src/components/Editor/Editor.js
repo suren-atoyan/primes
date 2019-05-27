@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { monacoEditor as monaco } from 'utils';
-import { useMount, useUpdate } from 'hooks';
+import { useMount, useUpdate } from 'utils/hooks';
 
 import config from 'config';
 
