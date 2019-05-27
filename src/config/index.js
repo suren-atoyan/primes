@@ -10,11 +10,6 @@ const config = {
     primeUpperBound: n => n * Math.log(n) + n * (Math.log(Math.log(n)) - 1),
   },
 
-  urls: {
-    monacoLoader: '/monaco-editor/vs/loader.js',
-    monacoBase: '/monaco-editor/vs',
-  },
-
   graphics: {
     lineChartProps: {
       margin: { top: 10, right: 10, bottom: 30, left: 30 },
@@ -61,6 +56,11 @@ const config = {
     max: 100,
   },
 
+  links: {
+    telegram: 'https://t.me/joinchat/IgyRDRR4fp9YbVhY2_tTEw',
+    github: 'https://github.com/SurenAt93/primes',
+  },
+
   custom: `
     // write your formula here as a function named "${defaultFnName}".
     // It should be a function depending on "n"
@@ -93,6 +93,11 @@ const config = {
     switchCustomToOn: `To see the result switch “custom” to on`,
     save: 'Your application state is successfully saved',
     codeIsTooLong: 'Your code is too long',
+  },
+
+  urls: {
+    monacoLoader: '/monaco-editor/vs/loader.js',
+    monacoBase: '/monaco-editor/vs',
   },
 };
 
