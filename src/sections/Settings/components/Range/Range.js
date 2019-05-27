@@ -1,40 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 
-import { makeStyles } from '@material-ui/styles';
 import Slider from '@material-ui/lab/Slider';
 import Typography from '@material-ui/core/Typography';
 
+import useStyles from './useStyles';
 import classNames from 'classnames';
-import throttle from 'lodash.throttle';
 
-import { useMount } from 'utils/hooks';
 import config from 'config';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    marginTop: 15,
-    paddingLeft: 10,
-    paddingRight: 10,
-  },
-
-  wrapper: {
-    display: 'flex',
-  },
-
-  from: {
-    marginRight: 20,
-  },
-
-  to: {
-    marginLeft: 20,
-  },
-
-  sliderWrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-  }
-}));
 
 function calcPercentageOfRange(max, min, value) {
   return (max - min + 1) * value / 100;
@@ -44,17 +16,13 @@ const Range = props => {
   const [value, setValue] = useState(props.defaultValue);
   const classes = useStyles();
 
-  const ref = useRef();
-
-  useMount(_ => {
-    ref.current = throttle(props.onChange, 240);
-  });
-
   function handleChange(e, value) {
-    const roundedValue = Math.round(value);
-    setValue(roundedValue);
-    ref.current && ref.current(
-      calcPercentageOfRange(config.range.max, config.range.min, roundedValue)
+    setValue(Math.round(value));
+  }
+
+  function handleDragEnd(e, value) {
+    props.onChange(
+      calcPercentageOfRange(config.range.max, config.range.min, Math.round(value))
     );
   }
 
@@ -62,7 +30,7 @@ const Range = props => {
     <div className={classes.wrapper}>
       <div className={classes.from}>{config.range.min}</div>
       <div className={classNames("full-width", classes.sliderWrapper)}>
-        <Slider value={value} onChange={handleChange} />
+        <Slider value={value} onChange={handleChange} onDragEnd={handleDragEnd} />
       </div>
       <div className={classes.to}>{config.range.max}</div>
     </div>
