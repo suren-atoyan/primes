@@ -6,6 +6,7 @@ import saveInUrl from './saveInUrl';
 import str2hex from './str2hex';
 import hex2str from './hex2str';
 import parseState from './parseState';
+import noop from './noop';
 import * as primeBoundaries from './primeBoundaries';
 
 export {
@@ -18,4 +19,5 @@ export {
   saveInUrl,
   str2hex,
   hex2str,
+  noop,
 };
