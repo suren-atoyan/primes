@@ -37,7 +37,7 @@ const transformToChartData = ({
   custom && transformedChartData.push(genCustomChartData(custom));
 
   // those checks we need to avoid nivo chart
-  // exeptions. In future it'll can be removed
+  // exeptions. In future it can be removed
   return !transformedChartData.length ||
          (
           transformedChartData.length === 1 &&
