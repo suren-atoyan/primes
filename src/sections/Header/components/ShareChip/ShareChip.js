@@ -7,15 +7,14 @@ import DoneIcon from '@material-ui/icons/Done';
 import CopyIcon from '@material-ui/icons/FileCopy';
 import ShareIcon from '@material-ui/icons/Share';
 
+import copy from 'copy-to-clipboard';
+
 const ShareChip = _ => {
   const [isCopied, setIsCopied] = useState();
 
   function handleClick() {
-    if (window.navigator.clipboard) {
-      // window.navigator.clipboard.write(window.location.href)
-      //   .then(_ => setIsCopied(true));
-      setIsCopied(true);
-    }
+    copy(window.location.href);
+    setIsCopied(true);
   }
 
   return <Chip
