@@ -9,4 +9,6 @@ body {
 
 .full-size { width: 100%; height: 100%; }
 
+.non-rounded { border-radius: unset !important;  }
+
 svg[role="img"] { display: block; }
