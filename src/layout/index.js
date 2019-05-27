@@ -13,9 +13,9 @@ const Layout = _ => (
     secondaryInitialSize={30}
     primaryMinSize={50}
     // strange? not exactly
-    // after drag end of splitter we have to dispatch resize
+    // after "DragEnd" of splitter, we have to dispatch a resize event
     // to window to avoid non-actual layout of elements
-    // inside that particular pane (for example
+    // inside of that particular pane (for example
     // "tab indicators" fo Material-UI)
     onDragEnd={_ => window.dispatchEvent(new Event('resize'))}
   >
