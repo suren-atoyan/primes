@@ -11,7 +11,10 @@ import Popover from '@material-ui/core/Popover';
 import Run from './components/buttons/Run';
 import Save from './components/buttons/Save';
 import Share from './components/buttons/Share';
+import Reset from './components/buttons/Reset';
 import ShareChip from './components/ShareChip';
+
+import { resetApp } from 'utils';
 
 const snackbarPosition = { vertical: 'top', horizontal: 'right' };
 const runMessage = `Your source executed, but for see result switch on 'custom'`;
@@ -22,7 +25,7 @@ const Header = _ => {
   const [message, setMessage] = useState('');
   const [anchorEl, setAnchorEl] = useState(null);
   const [getEditorValue] = useEditor();
-  const { state: { custom, isEditorReady }, actions: { setCustomFormula, saveState } } = useStore();
+  const { state: { custom, isEditorReady }, actions: { setCustomFormula, createSnapshot } } = useStore();
 
   function handleRun() {
     setCustomFormula(getEditorValue());
@@ -30,14 +33,17 @@ const Header = _ => {
   }
 
   function handleSave() {
-    saveState();
+    createSnapshot();
     setMessage(saveMessage);
   }
 
   function handleShare(event) {
-    saveState();
-
+    createSnapshot();
     setAnchorEl(event.currentTarget);
+  }
+
+  function handleReset() {
+    resetApp();
   }
 
   return <div className="full-size">
@@ -45,6 +51,7 @@ const Header = _ => {
       <Run disabled={!(isEditorReady && getEditorValue)} onClick={handleRun} />
       <Save onClick={handleSave} />
       <Share onClick={handleShare}/>
+      <Reset onClick={handleReset}/>
     </div>
     <Snackbar
       message={message}
