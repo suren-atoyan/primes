@@ -15,16 +15,16 @@ const Settings = _ => {
   const {
     state: {
       primeNumbers: { show: showPrimeNumbers },
-      primeMinBoundaries: { show: showPrimeMinBoundaries },
-      primeMaxBoundaries: { show: showPrimeMaxBoundaries },
+      primeLowerBound: { show: showPrimeLowerBound },
+      primeUpperBound: { show: showPrimeUpperBound },
       custom: { show: showCustom },
       range,
     },
 
     actions: {
       switchPrimeNumbersView,
-      switchPrimeMinBoundariesView,
-      switchPrimeMaxBoundariesView,
+      switchPrimeLowerBoundView,
+      switchPrimeUpperBoundView,
       switchCustomView,
       setRange,
     },
@@ -49,22 +49,22 @@ const Settings = _ => {
       <FormControlLabel
         control={
           <Switch
-            checked={showPrimeMinBoundaries}
-            onChange={_ => switchPrimeMinBoundariesView(!showPrimeMinBoundaries)}
+            checked={showPrimeLowerBound}
+            onChange={_ => switchPrimeLowerBoundView(!showPrimeLowerBound)}
             color="primary"
           />
         }
-        label="Prime Min Boundaries -> n⋅ln(n) + n⋅(ln(ln(n)) − 1)"
+        label="Prime Lower Bound -> n⋅ln(n) + n⋅(ln(ln(n)) − 1)"
       />
       <FormControlLabel
         control={
           <Switch
-            checked={showPrimeMaxBoundaries}
-            onChange={_ => switchPrimeMaxBoundariesView(!showPrimeMaxBoundaries)}
+            checked={showPrimeUpperBound}
+            onChange={_ => switchPrimeUpperBoundView(!showPrimeUpperBound)}
             color="primary"
           />
         }
-        label="Prime Max Boundaries -> n⋅ln(n) + n⋅ln(ln(n)"
+        label="Prime Upper Bound -> n⋅ln(n) + n⋅ln(ln(n)"
       />
       <FormControlLabel
         control={

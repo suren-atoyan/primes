@@ -2,10 +2,10 @@ const config = {
   formulas: {
     // JavaScript implementation of n⋅ln(n) + n⋅(ln(ln(n)) − 1)
     // NOTE: valid for n > 6
-    primeMinBoundaries: n => n * Math.log(n) + n * (Math.log(Math.log(n))),
+    primeLowerBound: n => n * Math.log(n) + n * (Math.log(Math.log(n))),
     // JavaScript implementation of n⋅ln(n) + n⋅ln(ln(n)
     // NOTE: valid for n > 6
-    primeMaxBoundaries: n => n * Math.log(n) + n * (Math.log(Math.log(n)) - 1),
+    primeUpperBound: n => n * Math.log(n) + n * (Math.log(Math.log(n)) - 1),
   },
 
   urls: {

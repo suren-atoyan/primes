@@ -11,11 +11,11 @@ const initialState = {
     show: true,
   },
 
-  primeMinBoundaries: {
+  primeLowerBound: {
     show: false,
   },
 
-  primeMaxBoundaries: {
+  primeUpperBound: {
     show: false,
   },
 
@@ -39,12 +39,12 @@ export const store = createOvermind({
       primeNumbers.show = show;
     },
 
-    switchPrimeMinBoundariesView({ state: { primeMinBoundaries } }, show) {
-      primeMinBoundaries.show = show;
+    switchPrimeLowerBoundView({ state: { primeLowerBound } }, show) {
+      primeLowerBound.show = show;
     },
 
-    switchPrimeMaxBoundariesView({ state: { primeMaxBoundaries } }, show) {
-      primeMaxBoundaries.show = show;
+    switchPrimeUpperBoundView({ state: { primeUpperBound } }, show) {
+      primeUpperBound.show = show;
     },
 
     switchCustomView({ state: { custom } }, show) {

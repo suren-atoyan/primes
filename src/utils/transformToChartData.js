@@ -4,13 +4,13 @@ const genPrimeNumbersChartData = list => ({
   data: list.map((item, i) => ({ x: i + 1, y: item })),
 });
 
-const genPrimeMinBoundariesChartData = list => ({
+const genPrimeLowerBoundChartData = list => ({
   id: 'n⋅ln(n) + n⋅(ln(ln(n)) − 1)',
   color: 'hsl(338, 70%, 50%)',
   data: list.map((item, i) => ({ x: i + 1, y: item })),
 });
 
-const genPrimeMaxBoundariesChartData = list => ({
+const genPrimeUpperBoundChartData = list => ({
   id: 'n⋅ln(n) + n⋅ln(ln(n)',
   color: 'hsl(168, 70%, 50%)',
   data: list.map((item, i) => ({ x: i + 1, y: item })),
@@ -25,15 +25,15 @@ const genCustomChartData = list => ({
 
 const transformToChartData = ({
   primeNumbers,
-  primeMinBoundaries,
-  primeMaxBoundaries,
+  primeLowerBound,
+  primeUpperBound,
   custom,
 }) => {
   const transformedChartData = [];
 
   primeNumbers && transformedChartData.push(genPrimeNumbersChartData(primeNumbers));
-  primeMinBoundaries && transformedChartData.push(genPrimeMinBoundariesChartData(primeMinBoundaries));
-  primeMaxBoundaries && transformedChartData.push(genPrimeMaxBoundariesChartData(primeMaxBoundaries));
+  primeLowerBound && transformedChartData.push(genPrimeLowerBoundChartData(primeLowerBound));
+  primeUpperBound && transformedChartData.push(genPrimeUpperBoundChartData(primeUpperBound));
   custom && transformedChartData.push(genCustomChartData(custom));
 
   // those checks we need to avoid nivo chart

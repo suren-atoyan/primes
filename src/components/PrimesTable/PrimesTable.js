@@ -10,8 +10,8 @@ import TableRow from './TableRow';
 
 const PrimesTable = ({ data: {
   primeNumbers,
-  primeMinBoundaries,
-  primeMaxBoundaries,
+  primeLowerBound,
+  primeUpperBound,
   custom,
   from,
   to,
@@ -21,19 +21,19 @@ const PrimesTable = ({ data: {
       <TableHead>
         <TableRow>
           <TableCell>nth</TableCell>
-          {primeMinBoundaries && <TableCell align="right">n⋅ln(n) + n⋅(ln(ln(n)) − 1)</TableCell>}
+          {primeLowerBound && <TableCell align="right">n⋅ln(n) + n⋅(ln(ln(n)) − 1)</TableCell>}
           {primeNumbers && <TableCell data-prime align="right">nth prime number</TableCell>}
-          {primeMaxBoundaries && <TableCell align="right">n⋅ln(n) + n⋅ln(ln(n)</TableCell>}
+          {primeUpperBound && <TableCell align="right">n⋅ln(n) + n⋅ln(ln(n)</TableCell>}
           {custom && <TableCell align="right">Custom</TableCell>}
         </TableRow>
       </TableHead>
       <TableBody>
-        {Array(to - from).fill().map((prime, i) => (
+        {Array(to - from + 1).fill().map((_, i) => (
           <TableRow key={i}>
             <TableCell component="th" scope="row">{i + 1}</TableCell>
-            {primeMinBoundaries && <TableCell align="right">{primeMinBoundaries[i] || '-'}</TableCell>}
-            {primeNumbers && <TableCell data-prime align="right">{prime}</TableCell>}
-            {primeMaxBoundaries && <TableCell align="right">{primeMaxBoundaries[i] || '-'}</TableCell>}
+            {primeLowerBound && <TableCell align="right">{primeLowerBound[i] || '-'}</TableCell>}
+            {primeNumbers && <TableCell data-prime align="right">{primeNumbers[i]}</TableCell>}
+            {primeUpperBound && <TableCell align="right">{primeUpperBound[i] || '-'}</TableCell>}
             {custom && <TableCell align="right">{custom[i] || '-'}</TableCell>}
           </TableRow>
         ))}
