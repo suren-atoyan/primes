@@ -62,7 +62,7 @@ export const store = createOvermind({
       }
     },
 
-    saveState({ state }) {
+    createSnapshot({ state }) {
       saveInUrl(JSON.stringify(state));
     },
 

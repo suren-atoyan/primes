@@ -1,3 +1,5 @@
+const defaultFnName = 'getNth';
+
 const config = {
   formulas: {
     // JavaScript implementation of n⋅ln(n) + n⋅(ln(ln(n)) − 1)
@@ -60,24 +62,28 @@ const config = {
   },
 
   custom: `
-    // write you formula here
-    // as a function called getPrime
-    // it should be a function based on "n"
+    // write you formula here as a function named "${defaultFnName}".
+    // It should be a function based on "n"
     // and sould try to return the nth prime number
     // something like this:
 
     const { ceil, log2 } = Math;
 
-    n => {
+    function ${defaultFnName}(n) {
       const res = 2**(1.5 * log2(n)) + log2(n) + 1 - 2**log2(n);
       return ceil(res);
     }
+
+    // note that it can be other function too, not only something related
+    // to prime, just name it "${defaultFnName}". (and you can remove all comments and everything else here :))
   `.trim().replace(/^ {4}/gm, ''),
 
   editor: {
     language: 'javascript',
     value: '',
   },
+
+  defaultFnName,
 };
 
 export default config;
