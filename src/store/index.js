@@ -1,31 +1,36 @@
 import { createOvermind } from 'overmind';
 import { createHook } from 'overmind-react';
 
-export const store = createOvermind({
-  state: {
-    primeNumbers: {
-      show: true,
-    },
+import { saveInUrl, parseState } from 'utils';
 
-    primeMinBoundaries: {
-      show: false,
-    },
+const sharedState = parseState();
 
-    primeMaxBoundaries: {
-      show: false,
-    },
-
-    custom: {
-      show: false,
-      formula: `n => Math.ceil(2**(1.5 * Math.log2(n)) + Math.log2(n) + 1 - 2**Math.log2(n))`,
-    },
-
-    range: {
-      from: 1,
-      to: 25,
-    },
+const initialState = {
+  primeNumbers: {
+    show: true,
   },
 
+  primeMinBoundaries: {
+    show: false,
+  },
+
+  primeMaxBoundaries: {
+    show: false,
+  },
+
+  custom: {
+    show: false,
+    formula: `n => Math.ceil(2**(1.5 * Math.log2(n)) + Math.log2(n) + 1 - 2**Math.log2(n))`,
+  },
+
+  range: {
+    from: 1,
+    to: 25,
+  },
+};
+
+export const store = createOvermind({
+  state: { ...initialState, ...sharedState },
   actions: {
     switchPrimeNumbersView({ state: { primeNumbers } }, show) {
       primeNumbers.show = show;
@@ -52,6 +57,10 @@ export const store = createOvermind({
         range.from = from;
         range.to = to;
       }
+    },
+
+    saveState({ state }) {
+      saveInUrl(JSON.stringify(state));
     }
   },
 });
