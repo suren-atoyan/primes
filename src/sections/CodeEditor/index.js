@@ -4,9 +4,11 @@ import { useStore } from 'store';
 import { useEditor } from 'utils/hooks';
 import Editor from 'components/Editor';
 
+import { ensureLastLine } from 'utils';
+
 const CodeEditor = ({ enqueueSnackbar }) => {
   const [, setGetter] = useEditor();
-  const { state: { custom }, actions: { setIsEditorReady } } = useStore();
+  const { state: { custom: { formula } }, actions: { setIsEditorReady } } = useStore();
 
   function editorDidMount(getter) {
     setGetter(_ => getter);
@@ -15,7 +17,7 @@ const CodeEditor = ({ enqueueSnackbar }) => {
 
   return <div className="full-size">
     <Editor
-      value={custom.formula}
+      value={ensureLastLine(formula)}
       editorDidMount={editorDidMount}
     />
   </div>;
