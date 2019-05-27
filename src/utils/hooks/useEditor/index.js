@@ -1,8 +1,8 @@
 // WARNING: this hack just to be able to use
-// monaco value getter in other components
-// also. In general, it's not normal usage
-// of hooks, and it's totally workaround.
-// Don't use this hook in any other place
+// monaco value getter in other components also.
+// In general, it's not a normal usage of hooks,
+// and it's totally workaround. Don't use this
+// hook in any other places.
 
 import { useState } from 'react';
 
