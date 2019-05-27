@@ -3,21 +3,15 @@ import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import { makeStyles } from '@material-ui/styles';
 
 import Container from 'sections/DataVisualisation';
+
+import useStyles from './useStyles';
 
 const tabs = {
   graphics: 'graphics',
   lists: 'lists',
 };
-
-const useStyles = makeStyles(theme => ({
-  content: {
-    height: 'calc(100% - 50px)',
-    overflow: 'auto',
-  },
-}));
 
 function DataVisualisation(props) {
   const classes = useStyles();
