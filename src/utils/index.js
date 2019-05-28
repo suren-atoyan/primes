@@ -7,6 +7,8 @@ import str2hex from './str2hex';
 import hex2str from './hex2str';
 import parseState from './parseState';
 import resetApp from './resetApp';
+import device from './device';
+import isDesktop from './isDesktop';
 import ensureLastLine from './ensureLastLine';
 import noop from './noop';
 import * as primeBoundaries from './primeBoundaries';
@@ -15,9 +17,11 @@ export {
   getPrime,
   primeBoundaries,
   ensureLastLine,
+  isDesktop,
   transformToChartData,
   monacoEditor,
   resetApp,
+  device,
   parseState,
   calcPrimes,
   saveInUrl,
