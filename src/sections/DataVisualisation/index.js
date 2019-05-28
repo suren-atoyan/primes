@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 
-import Graphics from './Graphics';
-import Lists from './Lists';
+import Graphic from './Graphic';
+import Sequence from './Sequence';
 
 import { useStore } from 'store';
 
@@ -34,9 +34,9 @@ const DataVisualisation = props => {
 
   return <>
     {
-      props.active === 'graphics'
-        ? <Graphics data={data} />
-        : <Lists data={data} />
+      props.active === 'graphic'
+        ? <Graphic data={data} />
+        : <Sequence data={data} />
     }
   </>
 };

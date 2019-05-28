@@ -54,7 +54,7 @@ const Settings = _ => {
             color="primary"
           />
         }
-        label="Prime Lower Bound -> n⋅ln(n) + n⋅(ln(ln(n)) − 1)"
+        label="Prime Lower Bound: n⋅ln(n) + n⋅(ln(ln(n)) − 1)"
       />
       <FormControlLabel
         control={
@@ -64,7 +64,7 @@ const Settings = _ => {
             color="primary"
           />
         }
-        label="Prime Upper Bound -> n⋅ln(n) + n⋅ln(ln(n)"
+        label="Prime Upper Bound: n⋅ln(n) + n⋅ln(ln(n)"
       />
       <FormControlLabel
         control={

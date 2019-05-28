@@ -9,13 +9,13 @@ import Container from 'sections/DataVisualisation';
 import useStyles from './useStyles';
 
 const tabs = {
-  graphics: 'graphics',
-  lists: 'lists',
+  graphic: 'graphic',
+  sequence: 'sequence',
 };
 
 function DataVisualisation(props) {
   const classes = useStyles();
-  const [activeTab, setActiveTab] = useState(tabs.graphics);
+  const [activeTab, setActiveTab] = useState(tabs.graphic);
 
   const handleTabChange = (event, tabValue) => setActiveTab(tabValue);
 
@@ -26,8 +26,8 @@ function DataVisualisation(props) {
         variant="fullWidth" 
         onChange={handleTabChange}
       >
-        <Tab label="Graphics" value={tabs.graphics} />
-        <Tab label="Lists" value={tabs.lists} />
+        <Tab label="Graphic" value={tabs.graphic} />
+        <Tab label="Sequence" value={tabs.sequence} />
       </Tabs>
 
       <Grid container className={classes.content}><Container active={activeTab} /></Grid>
