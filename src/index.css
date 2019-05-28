@@ -12,3 +12,5 @@ body {
 .non-rounded { border-radius: unset !important;  }
 
 svg[role="img"] { display: block; }
+
+.main-splitter .layout-splitter { width: 20px; }

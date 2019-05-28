@@ -5,9 +5,7 @@ const useStyles = makeStyles(theme => ({
     overflow: 'auto',
   },
   buttonsWrapper: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    minWidth: 404,
+    minWidth: 402,
   },
   popover: {
     '& div[role="document"]': {
