@@ -48,7 +48,7 @@ const Header = _ => {
     resetApp();
   }
 
-  return <div className="full-size">
+  return <div className={classes.root}>
     <div className={classes.buttonsWrapper}>
       <Run disabled={!(isEditorReady && getEditorValue)} onClick={handleRun} />
       <Save onClick={handleSave} />
@@ -66,7 +66,7 @@ const Header = _ => {
       open={Boolean(anchorEl)}
       anchorEl={anchorEl}
       onClose={_ => setAnchorEl(null)}
-      className={classes.root}
+      className={classes.popover}
     >
       <ShareChip />
     </Popover>

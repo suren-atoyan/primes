@@ -1,14 +1,15 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    overflow: 'auto',
+  },
   buttonsWrapper: {
-    position: 'absolute',
-    top: 0,
     display: 'flex',
     justifyContent: 'flex-end',
-    width: '100%',
+    minWidth: 404,
   },
-  root: {
+  popover: {
     '& div[role="document"]': {
       right: 8,
     },
