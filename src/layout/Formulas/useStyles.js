@@ -15,6 +15,9 @@ const useStyles = makeStyles(theme => {
     contentWrapper: {
       position: 'relative',
       height: `calc(100% - ${footerHeaderHeight * 2}px)`,
+      '& .layout-pane-primary': {
+        height: '100%',
+      },
     },
     content: {
       height: '100%',
