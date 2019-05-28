@@ -22,29 +22,25 @@ const genCustomChartData = list => ({
   data: list.map((item, i) => ({ x: i + 1, y: item })),
 });
 
-
 const transformToChartData = ({
   primeNumbers,
   primeLowerBound,
   primeUpperBound,
   custom,
+  from,
+  to,
 }) => {
-  const transformedChartData = [];
+  const transformedChartData = {
+    from, to,
+    list: [],
+  };
 
-  primeNumbers && transformedChartData.push(genPrimeNumbersChartData(primeNumbers));
-  primeLowerBound && transformedChartData.push(genPrimeLowerBoundChartData(primeLowerBound));
-  primeUpperBound && transformedChartData.push(genPrimeUpperBoundChartData(primeUpperBound));
-  custom && transformedChartData.push(genCustomChartData(custom));
+  primeNumbers && transformedChartData.list.push(genPrimeNumbersChartData(primeNumbers));
+  primeLowerBound && transformedChartData.list.push(genPrimeLowerBoundChartData(primeLowerBound));
+  primeUpperBound && transformedChartData.list.push(genPrimeUpperBoundChartData(primeUpperBound));
+  custom && transformedChartData.list.push(genCustomChartData(custom));
 
-  // those checks we need to avoid nivo chart
-  // exeptions. In future it can be removed
-  return !transformedChartData.length ||
-         (
-          transformedChartData.length === 1 &&
-          !transformedChartData[0].data.length
-         )
-    ? null
-    : transformedChartData;
+  return transformedChartData;
 };
 
 export default transformToChartData;

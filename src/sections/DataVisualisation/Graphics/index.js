@@ -4,8 +4,6 @@ import { transformToChartData } from 'utils';
 
 import LineChart from 'components/LineChart';
 
-const Graphics = ({ data }) => {
-  return <LineChart data={transformToChartData(data)} />;
-};
+const Graphics = ({ data }) => <LineChart data={transformToChartData(data)} />;
 
 export default Graphics;
