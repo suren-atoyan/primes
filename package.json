@@ -8,6 +8,8 @@
     "@material-ui/lab": "^4.0.0-alpha.13",
     "@material-ui/styles": "^4.0.0",
     "@nivo/line": "^0.58.0",
+    "@webos/process": "^0.2.0",
+    "@webos/timers": "^1.0.8",
     "classnames": "^2.2.6",
     "copy-to-clipboard": "^3.2.0",
     "mobile-detect": "^1.4.3",

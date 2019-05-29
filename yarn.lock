@@ -1702,6 +1702,16 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
+"@webos/process@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@webos/process/-/process-0.2.0.tgz#25b293195830d7f70c2d6ff39abcc798e2e94f84"
+  integrity sha512-wm9ANuZBevn7nq9pd2LG3+z4bPj4+8Dvm1iS+SReoy7gPftoigeSjLJe3P8EQM5VdOmvvw5q646OW8lyozzsxQ==
+
+"@webos/timers@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@webos/timers/-/timers-1.0.8.tgz#eb0d0125d51293667070c5f85d02c336105cef66"
+  integrity sha512-o3Ype6x0OK+pWLdl0emskflTMd1W+WwX0prM2wEYWvOpubQdW2BKCL9oi/PCZh8PnL9Qz/vYAn3U469Nmb5Hlg==
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
