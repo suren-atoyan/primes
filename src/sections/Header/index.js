@@ -4,7 +4,6 @@ import { useStore } from 'store';
 import { useEditor } from 'utils/hooks';
 import useStyles from './useStyles';
 
-import Snackbar from '@material-ui/core/Snackbar';
 import Popover from '@material-ui/core/Popover';
 
 // Buttons
@@ -19,24 +18,25 @@ import config from 'config';
 
 const Header = _ => {
   const classes = useStyles();
-  const [message, setMessage] = useState('');
   const [anchorEl, setAnchorEl] = useState(null);
   const [getEditorValue] = useEditor();
-  const { state: { custom, isEditorReady }, actions: { setCustomFormula, createSnapshot } } = useStore();
+  const {
+    state: { isEditorReady, isRunnerActive },
+    actions: { setCustomFormula, createSnapshot, showNotification },
+  } = useStore();
 
   function handleRun() {
     const code = getEditorValue();
     if (code.length > config.maxCodeLength) {
-      setMessage(config.messages.codeIsTooLong);
+      showNotification({ message: config.messages.codeIsTooLong, variant: 'error'});
     } else {
       setCustomFormula(code);
-      !custom.show && setMessage(config.messages.switchCustomToOn);
     }
   }
 
   function handleSave() {
     createSnapshot();
-    setMessage(config.messages.save);
+    showNotification({ message: config.messages.save, variant: 'success'});
   }
 
   function handleShare(event) {
@@ -50,18 +50,15 @@ const Header = _ => {
 
   return <div className={classes.root}>
     <div className={classes.buttonsWrapper}>
-      <Run disabled={!(isEditorReady && getEditorValue)} onClick={handleRun} />
+      <Run
+        isRunnerActive={isRunnerActive}
+        disabled={!(isEditorReady && getEditorValue)}
+        onClick={handleRun}
+      />
       <Save onClick={handleSave} />
       <Share onClick={handleShare}/>
       <Reset onClick={handleReset}/>
     </div>
-    <Snackbar
-      message={message}
-      anchorOrigin={config.snackbarPosition}
-      autoHideDuration={1300}
-      onClose={_ => setMessage('')}
-      open={!!message}
-    />
     <Popover
       open={Boolean(anchorEl)}
       anchorEl={anchorEl}

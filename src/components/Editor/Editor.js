@@ -93,4 +93,4 @@ Editor.defaultProps = {
   editorDidMount: _ => {}
 };
 
-export default Editor;
+export default React.memo(Editor);

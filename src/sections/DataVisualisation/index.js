@@ -6,7 +6,6 @@ import Sequence from './Sequence';
 import { useStore } from 'store';
 
 import { calcPrimes, primeBoundaries, getPrime } from 'utils';
-import config from 'config';
 
 const DataVisualisation = props => {
 
@@ -14,7 +13,7 @@ const DataVisualisation = props => {
     primeNumbers: { show: showPrimes },
     primeLowerBound: { show: showPrimeLowerBound },
     primeUpperBound: { show: showPrimeUpperBound },
-    custom: { show: showCustom, formula },
+    custom: { show: showCustom, sequnce },
     range: { from, to },
   }} = useStore();
 
@@ -26,11 +25,8 @@ const DataVisualisation = props => {
     calcPrimes(primeBoundaries.min, from, to), [from, to, showPrimeLowerBound]);
   data.primeUpperBound = useMemo(_ => showPrimeUpperBound &&
     calcPrimes(primeBoundaries.max, from, to), [from, to, showPrimeUpperBound]);
-  data.custom = useMemo(_ => showCustom &&
-    // it's not gonna be 'eval' in future :D
-    // don't worry, we will run it in a separate thread
-    // it's just for demo
-    calcPrimes(eval(formula + `\n;${config.defaultFnName};`), from, to), [from, to, showCustom, formula]);
+
+  showCustom && (data.custom = sequnce);
 
   return <>
     {

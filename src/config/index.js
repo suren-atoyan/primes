@@ -85,20 +85,34 @@ const config = {
 
   defaultFnName,
 
-  snackbarPosition: { vertical: 'top', horizontal: 'right' },
+  notifications: {
+    props: {
+      anchorOrigin: { vertical: 'top', horizontal: 'right' },
+      autoHideDuration: 2500,
+    },
+    defaultState: {
+      isActive: false,
+      message: '',
+      variant: 'info',
+      opt: {},
+    },
+  },
 
   maxCodeLength: 2000,
 
   messages: {
-    switchCustomToOn: `To see the result switch “custom” to on`,
+    switchCustomToOn: 'To see the result switch “custom” to on',
     save: 'Your application state is successfully saved',
     codeIsTooLong: 'Your code is too long',
+    tooLongExecution: 'Hmmm..., it executes too long. Maybe you have written something wrong?',
   },
 
   urls: {
     monacoLoader: '/monaco-editor/vs/loader.js',
     monacoBase: '/monaco-editor/vs',
   },
+
+  maxAcceptableExecutionTime: 2500,
 };
 
 export default config;
