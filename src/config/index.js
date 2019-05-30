@@ -4,10 +4,10 @@ const config = {
   formulas: {
     // JavaScript implementation of n⋅ln(n) + n⋅(ln(ln(n)) − 1)
     // NOTE: valid for n > 6
-    primeLowerBound: n => n * Math.log(n) + n * (Math.log(Math.log(n))),
+    primeLowerBound: `const getNth = n => n < 6 ? 0 : n * Math.log(n) + n * (Math.log(Math.log(n)))`,
     // JavaScript implementation of n⋅ln(n) + n⋅ln(ln(n)
     // NOTE: valid for n > 6
-    primeUpperBound: n => n * Math.log(n) + n * (Math.log(Math.log(n)) - 1),
+    primeUpperBound: `const getNth = n => n < 6 ? 0 : n * Math.log(n) + n * (Math.log(Math.log(n)) - 1)`,
   },
 
   graphics: {
