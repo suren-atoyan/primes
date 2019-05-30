@@ -13,20 +13,22 @@ async function runner(source, fnName) {
     succeed: false,
   };
 
+  const currentThread = process.setSource(source, [], fnName);
+
   try {
     await Promise.race([
       sleep(config.maxAcceptableExecutionTime).then(_ => {
         if (!result.succeed) {
-          process.kill();
           throw Error(config.messages.tooLongExecution);
         }
       }),
-      process.setSource(source, [], fnName).postMessage(),
+      currentThread.postMessage(),
     ])
     .then(value => {
       result.succeed = true;
       result.value = value;
-    });
+    })
+    .finally(_ => currentThread.kill());
   } catch(err) {
     result.error = err.message;
   }
