@@ -12,11 +12,9 @@ import ensureLastLine from './ensureLastLine';
 import noop from './noop';
 import monacoEditor from './monacoEditor';
 import calcPrimes from './calcPrimes';
-import * as primeBoundaries from './primeBoundaries';
 
 export {
   getPrime,
-  primeBoundaries,
   ensureLastLine,
   isDesktop,
   transformToChartData,
