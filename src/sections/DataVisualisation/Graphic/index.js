@@ -1,9 +1,5 @@
-import React from 'react';
+import { memo } from 'react';
 
-import { transformToChartData } from 'utils';
+import Graphic from './Graphic';
 
-import LineChart from 'components/LineChart';
-
-const Graphic = ({ data }) => <LineChart data={transformToChartData(data)} />;
-
-export default Graphic;
+export default memo(Graphic);

@@ -1,7 +1,5 @@
-import React from 'react';
+import { memo } from 'react';
 
-import PrimesTable from 'components/PrimesTable';
+import Sequence from './Sequence';
 
-const Sequence = ({ data }) => <PrimesTable data={data} />;
-
-export default Sequence;
+export default memo(Sequence);
