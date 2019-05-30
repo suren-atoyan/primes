@@ -9,21 +9,8 @@ const setIsEditorReady = ({ state }, isReady) => {
   state.isEditorReady = isReady;
 };
 
-const setCustomFormula = async ({ state, actions, effects }, formula) => {
-  actions.setIsRunnerActive(true);
-  const result = await effects.calculate.cutomSequence(formula, state.range, config.defaultFnName);
-
-  if (result.error) {
-    actions.showNotification({ message: result.error, variant: 'error' });
-  } else {
-    state.custom.formula = formula;
-    state.custom.sequnce = result.value;
-    if (!state.custom.show) {
-      actions.showNotification({ message: config.messages.switchCustomToOn, variant: 'info' });
-    }
-  }
-
-  actions.setIsRunnerActive(false);
+const setCustomFormula = async ({ state }, formula) => {
+  state.customSequence.formula = formula;
 };
 
 const setIsRunnerActive = ({ state }, status) => {
@@ -42,8 +29,8 @@ const switchPrimeUpperBoundView = ({ state: { primeUpperBound } }, show) => {
   primeUpperBound.show = show;
 };
 
-const switchCustomView = ({ state: { custom } }, show) => {
-  custom.show = show;
+const switchCustomView = ({ state: { customSequence } }, show) => {
+  customSequence.show = show;
 };
 
 const setRange = ({ state: { range }}, to, from = 1) => {

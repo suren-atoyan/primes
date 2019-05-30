@@ -17,7 +17,7 @@ const Settings = _ => {
       primeNumbers: { show: showPrimeNumbers },
       primeLowerBound: { show: showPrimeLowerBound },
       primeUpperBound: { show: showPrimeUpperBound },
-      custom: { show: showCustom },
+      customSequence: { show: showCustomSequence },
       range,
     },
 
@@ -69,8 +69,8 @@ const Settings = _ => {
       <FormControlLabel
         control={
           <Switch
-            checked={showCustom}
-            onChange={_ => switchCustomView(!showCustom)}
+            checked={showCustomSequence}
+            onChange={_ => switchCustomView(!showCustomSequence)}
             color="primary"
           />
         }

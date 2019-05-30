@@ -16,8 +16,8 @@ const genPrimeUpperBoundChartData = list => ({
   data: list.map((item, i) => ({ x: i + 1, y: item })),
 });
 
-const genCustomChartData = list => ({
-  id: 'custom',
+const genCustomSequenceChartData = list => ({
+  id: 'customSequence',
   color: 'red',
   data: list.map((item, i) => ({ x: i + 1, y: item })),
 });
@@ -26,7 +26,7 @@ const transformToChartData = ({
   primeNumbers,
   primeLowerBound,
   primeUpperBound,
-  custom,
+  customSequence,
   from,
   to,
 }) => {
@@ -38,7 +38,7 @@ const transformToChartData = ({
   primeNumbers && transformedChartData.list.push(genPrimeNumbersChartData(primeNumbers));
   primeLowerBound && transformedChartData.list.push(genPrimeLowerBoundChartData(primeLowerBound));
   primeUpperBound && transformedChartData.list.push(genPrimeUpperBoundChartData(primeUpperBound));
-  custom && transformedChartData.list.push(genCustomChartData(custom));
+  customSequence && transformedChartData.list.push(genCustomSequenceChartData(customSequence));
 
   return transformedChartData;
 };

@@ -12,7 +12,7 @@ const PrimesTable = ({ data: {
   primeNumbers,
   primeLowerBound,
   primeUpperBound,
-  custom,
+  customSequence,
   from,
   to,
 }}) => (
@@ -24,7 +24,7 @@ const PrimesTable = ({ data: {
           {primeLowerBound && <TableCell align="right">n⋅ln(n) + n⋅(ln(ln(n)) − 1)</TableCell>}
           {primeNumbers && <TableCell data-prime align="right">nth prime number</TableCell>}
           {primeUpperBound && <TableCell align="right">n⋅ln(n) + n⋅ln(ln(n)</TableCell>}
-          {custom && <TableCell align="right">Custom</TableCell>}
+          {customSequence && <TableCell align="right">Custom</TableCell>}
         </TableRow>
       </TableHead>
       <TableBody>
@@ -34,7 +34,7 @@ const PrimesTable = ({ data: {
             {primeLowerBound && <TableCell align="right">{primeLowerBound[i] || '-'}</TableCell>}
             {primeNumbers && <TableCell data-prime align="right">{primeNumbers[i]}</TableCell>}
             {primeUpperBound && <TableCell align="right">{primeUpperBound[i] || '-'}</TableCell>}
-            {custom && <TableCell align="right">{custom[i] || '-'}</TableCell>}
+            {customSequence && <TableCell align="right">{customSequence[i] || '-'}</TableCell>}
           </TableRow>
         ))}
       </TableBody>
