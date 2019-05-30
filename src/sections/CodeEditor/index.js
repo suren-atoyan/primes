@@ -8,7 +8,7 @@ import { ensureLastLine } from 'utils';
 
 const CodeEditor = ({ enqueueSnackbar }) => {
   const [, setGetter] = useEditor();
-  const { state: { custom: { formula } }, actions: { setIsEditorReady } } = useStore();
+  const { state: { customSequence: { formula } }, actions: { setIsEditorReady } } = useStore();
 
   function editorDidMount(getter) {
     setGetter(_ => getter);
