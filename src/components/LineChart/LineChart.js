@@ -10,6 +10,7 @@ const LineChart = ({ data: { from, to, list } }) => list.length
       useMesh={to - from + 1 > 3} // those very suspicious magic numbers
       // have appeared just because in those cases when we have data to represent
       // with less than 3 lengths, "nivo" charts don't work with mesh.
+      animate={false}
     />
   : null;
 

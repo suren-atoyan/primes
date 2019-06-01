@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 
 import Graphic from './Graphic';
 import Sequence from './Sequence';
-import Loading from 'components/Loading';
 
 import { useStore } from 'store';
 
@@ -12,7 +11,7 @@ import config from 'config';
 const DataVisualisation = props => {
 
   const {
-    state: { isRunnerActive, primeNumbers, primeLowerBound, primeUpperBound, customSequence, range: { from, to }},
+    state: { primeNumbers, primeLowerBound, primeUpperBound, customSequence, range: { from, to }},
     actions: { setIsRunnerActive, showNotification },
     effects: { calculate },
   } = useStore();
@@ -59,9 +58,7 @@ const DataVisualisation = props => {
 
   return <>
     {
-      isRunnerActive
-        ? <Loading />
-        : props.active === 'graphic'
+      props.active === 'graphic'
         ? <Graphic data={data} />
         : <Sequence data={data} />
     }
