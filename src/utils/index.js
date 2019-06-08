@@ -10,6 +10,7 @@ import device from './device';
 import isDesktop from './isDesktop';
 import ensureLastLine from './ensureLastLine';
 import checkForNumericalSequence from './checkForNumericalSequence';
+import asyncComponentLoader from './asyncComponentLoader';
 import noop from './noop';
 import monacoEditor from './monacoEditor';
 import calcPrimes from './calcPrimes';
@@ -20,6 +21,7 @@ export {
   isDesktop,
   transformToChartData,
   checkForNumericalSequence,
+  asyncComponentLoader,
   monacoEditor,
   runner,
   resetApp,
