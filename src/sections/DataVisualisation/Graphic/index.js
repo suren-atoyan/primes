@@ -1,5 +1,3 @@
-import { memo } from 'react';
+import { memo, lazy } from 'react';
 
-import Graphic from './Graphic';
-
-export default memo(Graphic);
+export default memo(lazy(_ => import('./Graphic')));

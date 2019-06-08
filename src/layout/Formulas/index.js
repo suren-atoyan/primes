@@ -2,12 +2,19 @@ import React from 'react';
 
 import SplitterLayout from 'react-splitter-layout';
 
-import Header from 'sections/Header';
-import CodeEditor from 'sections/CodeEditor';
-import Settings from 'sections/Settings';
-import Links from 'sections/Links';
+import HeaderLoader from 'sections/Header';
+import CodeEditorLoader from 'sections/CodeEditor';
+import SettingsLoader from 'sections/Settings';
+import LinksLoader from 'sections/Links';
+
+import { asyncComponentLoader } from 'utils';
 
 import useStyles from './useStyles';
+
+const Header = asyncComponentLoader(HeaderLoader);
+const CodeEditor = asyncComponentLoader(CodeEditorLoader);
+const Settings = asyncComponentLoader(SettingsLoader);
+const Links = asyncComponentLoader(LinksLoader);
 
 const Formulas = props => {
   const classes = useStyles();

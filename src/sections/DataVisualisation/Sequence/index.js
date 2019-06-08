@@ -1,5 +1,3 @@
-import { memo } from 'react';
+import { memo, lazy } from 'react';
 
-import Sequence from './Sequence';
-
-export default memo(Sequence);
+export default memo(lazy(_ => import('./Sequence')));

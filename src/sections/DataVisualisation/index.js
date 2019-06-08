@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useMemo } from 'react';
 
-import Graphic from './Graphic';
-import Sequence from './Sequence';
+import GraphicLoader from './Graphic';
+import SequenceLoader from './Sequence';
 
 import { useStore } from 'store';
 
-import { calcPrimes, getPrime, noop } from 'utils';
+import { calcPrimes, getPrime, noop, asyncComponentLoader } from 'utils';
 import config from 'config';
+
+const Sequence = asyncComponentLoader(SequenceLoader);
+const Graphic = asyncComponentLoader(GraphicLoader);
 
 const DataVisualisation = props => {
 
