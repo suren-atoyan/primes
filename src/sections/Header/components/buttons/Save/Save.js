@@ -1,14 +1,9 @@
 import React from 'react';
 
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '../';
 import SaveIcon from '@material-ui/icons/Save';
 
-const useStyles = makeStyles(theme => ({
-  rightIcon: {
-    marginLeft: theme.spacing(1),
-  },
-}));
+import useStyles from './useStyles';
 
 const Save = props => {
 

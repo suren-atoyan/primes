@@ -8,7 +8,8 @@ import { useMount, useUpdate } from 'utils/hooks';
 
 import config from 'config';
 
-import './index.css';
+import useStyles from './useStyles';
+import classNames from 'classnames';
 
 const Editor =
   ({ value, language, theme, options, editorDidMount, line }) =>
@@ -17,6 +18,8 @@ const Editor =
   const editorRef = useRef();
   const monacoRef = useRef();
   const containerRef = useRef();
+
+  const classes = useStyles();
 
   useMount(_ => {
     monaco
@@ -63,17 +66,16 @@ const Editor =
   }
 
   return (
-    <section className="monaco-editor__wrapper full-size fb">
-      {isLoading && <div className="monaco-editor__preloader">
+    <section className={classNames('full-size', classes.wrapper)}>
+      {isLoading && <div className={classes.preloader}>
         <CircularProgress
           size={100}
           color="primary"
-          className="monaco-editor__preloader--circle"
         />
       </div>}
       <div
         ref={containerRef}
-        className="fb full-size"
+        className="full-size"
       />
     </section>
   );

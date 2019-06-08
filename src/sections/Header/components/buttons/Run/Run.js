@@ -1,18 +1,10 @@
 import React from 'react';
 
-import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Button from '../';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
-const useStyles = makeStyles(theme => ({
-  rightIcon: {
-    marginLeft: theme.spacing(1),
-  },
-  run: {
-    backgroundColor: '#689f38',
-  },
-}));
+import useStyles from './useStyles';
 
 const Run = ({ isRunnerActive, disabled, ...props }) => {
 

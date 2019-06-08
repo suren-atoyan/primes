@@ -1,14 +1,9 @@
 import React from 'react';
 
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '../';
 import ResetIcon from '@material-ui/icons/Refresh';
 
-const useStyles = makeStyles(theme => ({
-  rightIcon: {
-    marginLeft: theme.spacing(1),
-  },
-}));
+import useStyles from './useStyles';
 
 const Reset = props => {
 
