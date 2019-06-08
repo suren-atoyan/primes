@@ -16,7 +16,7 @@ const CodeEditor = asyncComponentLoader(CodeEditorLoader);
 const Settings = asyncComponentLoader(SettingsLoader);
 const Links = asyncComponentLoader(LinksLoader);
 
-const Formulas = props => {
+const Formulas = _ => {
   const classes = useStyles();
 
   return (
@@ -33,6 +33,6 @@ const Formulas = props => {
       <div className={classes.links}><Links /></div>
     </div>
   );
-}
+};
 
 export default Formulas;

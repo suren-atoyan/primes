@@ -13,7 +13,7 @@ const tabs = {
   sequence: 'sequence',
 };
 
-function DataVisualisation(props) {
+const DataVisualisation = _ => {
   const classes = useStyles();
   const [activeTab, setActiveTab] = useState(tabs.graphic);
 
@@ -33,6 +33,6 @@ function DataVisualisation(props) {
       <Grid container className={classes.content}><Container active={activeTab} /></Grid>
     </>
   );
-}
+};
 
 export default DataVisualisation;
