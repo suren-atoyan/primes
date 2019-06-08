@@ -1,4 +1,4 @@
-// WARNING: this hack just to be able to use
+// WARNING: this hack is just for being able to use
 // monaco value getter in other components also.
 // In general, it's not a normal usage of hooks,
 // and it's totally workaround. Don't use this

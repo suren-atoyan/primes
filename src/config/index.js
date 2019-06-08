@@ -75,7 +75,7 @@ const config = {
     }
 
     // note that it can be another function too, not only something related
-    // to prime, just name it "${defaultFnName}". (and you can remove all comments and everything else here :))
+    // to prime, just name it "${defaultFnName}". (and you can remove all comments and everything else from here :))
   `.trim().replace(/^ {4}/gm, ''),
 
   editor: {

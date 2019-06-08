@@ -11,7 +11,7 @@ function getLayoutSplitterProps(isSettingsSectionOpen) {
   if (!isDesktop) {
     props.customClassName = `main-splitter ${isSettingsSectionOpen ? 'settings' : 'graphics'}`;
     props.key = isSettingsSectionOpen; // This is for force update layout splitter
-    // in non-desktop devices in those cases when the user clicks to the splitter
+    // in non-desktop devices in those cases when the user clicks on the splitter
     // as there are no other options to do that with current library which provides
     // us layaout-splitting functionality.
   }
