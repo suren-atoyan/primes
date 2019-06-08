@@ -6,7 +6,7 @@ import Editor from 'components/Editor';
 
 import { ensureLastLine } from 'utils';
 
-const CodeEditor = ({ enqueueSnackbar }) => {
+const CodeEditor = _ => {
   const [, setGetter] = useEditor();
   const { state: { customSequence: { formula } }, actions: { setIsEditorReady } } = useStore();
 
