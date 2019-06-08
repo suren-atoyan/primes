@@ -104,7 +104,8 @@ const config = {
     switchCustomToOn: 'To see the result switch “custom” to on',
     save: 'Your application state is successfully saved',
     codeIsTooLong: 'Your code is too long',
-    tooLongExecution: 'Hmmm..., it executes too long. Maybe you have written something wrong?',
+    tooLongExecution: 'Hmmm... it executes too long. Maybe you have written something wrong?',
+    notNumericalSequence: 'Hmmm... looks like there are some items in your sequence are not numbers bro',
   },
 
   urls: {

@@ -9,6 +9,7 @@ import runner from './runner';
 import device from './device';
 import isDesktop from './isDesktop';
 import ensureLastLine from './ensureLastLine';
+import checkForNumericalSequence from './checkForNumericalSequence';
 import noop from './noop';
 import monacoEditor from './monacoEditor';
 import calcPrimes from './calcPrimes';
@@ -18,6 +19,7 @@ export {
   ensureLastLine,
   isDesktop,
   transformToChartData,
+  checkForNumericalSequence,
   monacoEditor,
   runner,
   resetApp,

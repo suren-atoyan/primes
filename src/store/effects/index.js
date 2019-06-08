@@ -1,4 +1,5 @@
-import { runner } from 'utils';
+import { runner, checkForNumericalSequence } from 'utils';
+import config from 'config';
 
 const calculate = {
   async genSequence(formula, { from ,to }, fnName) {
@@ -8,7 +9,17 @@ const calculate = {
       const __x__ = _ => result;
     `;
 
-    return await runner(source, '__x__');
+    const result = await runner(source, '__x__');
+
+    if (result.value) {
+      const isSequenceNumerical = checkForNumericalSequence(result.value);
+
+      if (!isSequenceNumerical) {
+        result.error = config.messages.notNumericalSequence;
+      }
+    }
+
+    return result;
   },
 
   customSequence(formula, { from ,to }, fnName) {
