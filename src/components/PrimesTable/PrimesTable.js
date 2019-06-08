@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -41,5 +42,16 @@ const PrimesTable = ({ data: {
     </Table>
   </Paper>
 );
+
+PrimesTable.propTypes = {
+  data: PropTypes.shape({
+    primeNumbers: PropTypes.arrayOf(PropTypes.number),
+    primeLowerBound: PropTypes.arrayOf(PropTypes.number),
+    primeUpperBound: PropTypes.arrayOf(PropTypes.number),
+    customSequence: PropTypes.arrayOf(PropTypes.number),
+    from: PropTypes.number,
+    to: PropTypes.number,
+  }),
+};
 
 export default PrimesTable;

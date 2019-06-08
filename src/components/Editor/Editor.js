@@ -79,7 +79,7 @@ const Editor =
       />
     </section>
   );
-}
+};
 
 Editor.propTypes = {
   value: PropTypes.string,
@@ -87,12 +87,13 @@ Editor.propTypes = {
   options: PropTypes.object,
   editorDidMount: PropTypes.func,
   theme: PropTypes.string,
+  line: PropTypes.number,
 };
 
 Editor.defaultProps = {
   ...config.editor,
   options: {},
-  editorDidMount: _ => {}
+  editorDidMount: _ => {},
 };
 
 export default Editor;

@@ -10,6 +10,10 @@ const Loading = _ => {
   return <div className={classes.preloader}>
     <CircularProgress size={50} />
   </div>;
-}
+};
+
+Loading.propTypes = {
+  // interesting times; there are components not using any prop...
+};
 
 export default Loading;
