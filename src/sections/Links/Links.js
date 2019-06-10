@@ -11,11 +11,11 @@ const Links = _ => {
   const classes = useStyles();
 
   return <div className={classNames('full-size', classes.wrapper)}>
-    <Button target="_blank" href={config.links.telegram}>
+    <Button target="_blank" rel="noreferrer" href={config.links.telegram}>
       <img src="/icons/telegram.png" alt="telegram icon"/>
       Telegram
     </Button>
-    <Button target="_blank" href={config.links.github}>
+    <Button target="_blank" rel="noreferrer" href={config.links.github}>
       <img src="/icons/octocat.png" alt="github icon"/>
       GitHub
     </Button>
