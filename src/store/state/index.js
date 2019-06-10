@@ -17,7 +17,7 @@ const initialState = {
   },
 
   customSequence: {
-    show: false,
+    show: true,
     formula: config.custom,
   },
 
