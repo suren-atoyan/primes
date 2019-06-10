@@ -7,6 +7,7 @@ import parseState from './parseState';
 import resetApp from './resetApp';
 import runner from './runner';
 import device from './device';
+import canUseMesh from './canUseMesh';
 import isDesktop from './isDesktop';
 import ensureLastLine from './ensureLastLine';
 import checkForNumericalSequence from './checkForNumericalSequence';
@@ -23,6 +24,7 @@ export {
   checkForNumericalSequence,
   asyncComponentLoader,
   monacoEditor,
+  canUseMesh,
   runner,
   resetApp,
   device,
