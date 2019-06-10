@@ -19,7 +19,6 @@ const EditorButton = props => {
 
   return <Button
     size="small"
-    variant="contained"
     {...props}
     className={classNames(classes.button, props.className)}
   />;

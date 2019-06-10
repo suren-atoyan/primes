@@ -70,7 +70,7 @@ const config = {
     const { ceil, log2 } = Math;
 
     function ${defaultFnName}(n) {
-      const res = 2**(1.5 * log2(n)) + log2(n) + 1 - 2**log2(n);
+      const res = 2**(3/2 * log2(n)) + log2(n) + 1 - 2**log2(n);
       return ceil(res);
     }
 

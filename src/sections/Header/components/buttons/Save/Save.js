@@ -10,7 +10,7 @@ const Save = props => {
   const classes = useStyles();
 
   return <Button
-    color="secondary"
+    className={classes.save}
     {...props}
   >
     Save

@@ -5,7 +5,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(1),
   },
   run: {
-    backgroundColor: '#689f38',
+    color: '#006400',
   },
 }));
 

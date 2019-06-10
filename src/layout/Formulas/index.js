@@ -20,7 +20,7 @@ const Formulas = _ => {
   const classes = useStyles();
 
   return (
-    <div className={classes.wrapper}>
+    <main className={classes.wrapper}>
       <div className={classes.header}><Header /></div>
 
       <div className={classes.contentWrapper}>
@@ -31,7 +31,7 @@ const Formulas = _ => {
       </div>
 
       <div className={classes.links}><Links /></div>
-    </div>
+    </main>
   );
 };
 
