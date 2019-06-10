@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     },
 
     '& img': {
-      width: 25,
+      width: 'auto',
       height: 25,
       marginRight: 5,
     },
