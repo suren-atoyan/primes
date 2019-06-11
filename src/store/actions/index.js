@@ -1,5 +1,4 @@
 import { saveInUrl } from 'utils';
-import config from 'config';
 
 const createSnapshot = ({ state }) => {
   saveInUrl(JSON.stringify(state));
@@ -57,7 +56,7 @@ const showNotification = ({ state }, { message, variant = 'info', opt = {} }) =>
 };
 
 const hideNotification = ({ state }) => {
-  state.notifications = config.notifications.defaultState;
+  state.notifications.isActive = false;
 };
 
 export {

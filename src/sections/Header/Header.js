@@ -7,6 +7,8 @@ import useStyles from './useStyles';
 import Popover from '@material-ui/core/Popover';
 import Paper from '@material-ui/core/Paper';
 
+import Notifications from 'notifications';
+
 // Buttons
 import Run from './components/buttons/Run';
 import Save from './components/buttons/Save';
@@ -68,6 +70,7 @@ const Header = _ => {
     >
       <ShareChip />
     </Popover>
+    <Notifications />
   </Paper>
 }
 
