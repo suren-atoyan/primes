@@ -106,11 +106,19 @@ const config = {
     codeIsTooLong: 'Your code is too long',
     tooLongExecution: 'Hmmm... it executes too long. Maybe you have written something wrong?',
     notNumericalSequence: 'Hmmm... looks like there are some items in your sequence are not numbers bro',
+
+    errorBoundary: {
+      somethingWentWrong: 'Oooops... Sorry, I guess, something went wrong. You can:',
+      resetApp: 'Press here to reset the application',
+      openIssue: 'Press here to open issue about it on GitHub',
+    },
   },
 
   urls: {
     monacoLoader: '/monaco-editor/vs/loader.js',
     monacoBase: '/monaco-editor/vs',
+    octocatIcon: '/icons/octocat.png',
+    telegramIcon: '/icons/telegram.png',
   },
 
   maxAcceptableExecutionTime: 2500,
