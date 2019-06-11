@@ -5,8 +5,10 @@ import ErrorBoundaryFallback from 'components/ErrorBoundaryFallback';
 
 import Layout from 'layout';
 
-const App = props => <ErrorBoundary FallbackComponent={ErrorBoundaryFallback}>
-  <Layout />
-</ErrorBoundary>;
+const App = _ => (
+  <ErrorBoundary FallbackComponent={ErrorBoundaryFallback}>
+    <Layout />
+  </ErrorBoundary>
+);
 
 export default App;
