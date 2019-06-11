@@ -26,8 +26,8 @@ const config = {
       pointLabel: 'y',
       pointLabelYOffset: -12,
       useMesh: true,
-      enableGridX: false,
-      enableGridY: false,
+      enableGridX: true,
+      enableGridY: true,
       lineWidth: 1,
       legends: [{
         anchor: 'bottom-right',
