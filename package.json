@@ -18,6 +18,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-error-boundary": "^1.2.5",
     "react-scripts": "3.0.1",
     "react-splitter-layout": "^4.0.0"
   },
