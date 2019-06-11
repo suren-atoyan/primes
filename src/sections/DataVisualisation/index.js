@@ -14,7 +14,9 @@ const Graphic = asyncComponentLoader(GraphicLoader);
 const DataVisualisation = props => {
 
   const {
-    state: { primeNumbers, primeLowerBound, primeUpperBound, customSequence, range: { from, to }},
+    state: {
+      primeNumbers, primeLowerBound, primeUpperBound, customSequence, range: { from, to }, themeMode
+    },
     actions: { setIsRunnerActive, showNotification },
     effects: { calculate },
   } = useStore();
@@ -62,7 +64,7 @@ const DataVisualisation = props => {
   return <>
     {
       props.active === 'graphic'
-        ? <Graphic data={data} />
+        ? <Graphic data={data} themeMode={themeMode} />
         : <Sequence data={data} />
     }
   </>
