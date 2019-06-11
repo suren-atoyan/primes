@@ -1,5 +1,5 @@
 import TableRow from '@material-ui/core/TableRow';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, darken } from '@material-ui/core/styles';
 
 const StyledTableRow = withStyles(theme => ({
   root: {
@@ -7,7 +7,7 @@ const StyledTableRow = withStyles(theme => ({
       backgroundColor: theme.palette.background.default,
     },
     '&:hover': {
-      backgroundColor: [theme.palette.grey[200], '!important'],
+      backgroundColor: [darken(theme.palette.background.paper, 0.2), '!important'],
     },
   },
 }))(TableRow);

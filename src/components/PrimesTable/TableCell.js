@@ -1,9 +1,9 @@
 import TableCell from '@material-ui/core/TableCell';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, darken } from '@material-ui/core/styles';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: darken(theme.palette.background.default, 0.5),
     color: theme.palette.common.white,
     fontSize: 16,
   },
@@ -11,8 +11,8 @@ const StyledTableCell = withStyles(theme => ({
     fontSize: 16,
   },
   root: {
-    '&:first-child, &[data-prime="true"] ': {
-      color: theme.palette.primary.light,
+    '&:first-child': {
+      color: theme.palette.text.secondary,
     },
   },
 }))(TableCell);
