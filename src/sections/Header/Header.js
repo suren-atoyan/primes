@@ -5,6 +5,7 @@ import { useEditor } from 'utils/hooks';
 import useStyles from './useStyles';
 
 import Popover from '@material-ui/core/Popover';
+import Paper from '@material-ui/core/Paper';
 
 // Buttons
 import Run from './components/buttons/Run';
@@ -48,7 +49,7 @@ const Header = _ => {
     resetApp();
   }
 
-  return <div className={classes.root}>
+  return <Paper elevation={0} square={true} className={classes.root}>
     <div className={classes.buttonsWrapper}>
       <Run
         isRunnerActive={isRunnerActive}
@@ -67,7 +68,7 @@ const Header = _ => {
     >
       <ShareChip />
     </Popover>
-  </div>
+  </Paper>
 }
 
 export default Header;
