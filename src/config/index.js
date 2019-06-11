@@ -15,25 +15,25 @@ const config = {
       margin: { top: 10, right: 10, bottom: 30, left: 30 },
       xScale: { type: 'point' },
       yScale: { type: 'linear', stacked: false, min: 'auto', max: 'auto' },
-      axisTop: null,
-      axisRight: null,
       colors: { scheme: 'category10' },
       pointSize: 8,
-      curve: 'cardinal',
+      curve: 'natural',
+      enableGridX: true,
+      enableGridY: true,
       pointColor: { theme: 'background' },
       pointBorderWidth: 0.5,
       pointBorderColor: { from: 'serieColor' },
       pointLabel: 'y',
       pointLabelYOffset: -12,
       useMesh: true,
-      enableGridX: true,
-      enableGridY: true,
-      lineWidth: 1,
+      lineWidth: 2,
       legends: [{
         anchor: 'bottom-right',
         direction: 'column',
         itemDirection: 'left-to-right',
-        itemWidth: 80,
+        itemTextColor: '#fff',
+        itemBackground: 'rgba(0, 0, 0, .2)',
+        itemWidth: 120,
         itemHeight: 20,
         translateX: -70,
         translateY: -20,
@@ -42,12 +42,16 @@ const config = {
           {
             on: 'hover',
             style: {
-              itemBackground: 'rgba(0, 0, 0, .03)',
+              itemBackground: 'rgba(0, 0, 0, .8)',
               itemOpacity: 1,
             },
           },
         ],
       }],
+    },
+
+    darkModeStyles: {
+      fill: '#123123',
     },
   },
 
@@ -81,6 +85,17 @@ const config = {
   editor: {
     language: 'javascript',
     value: '',
+
+    theme: {
+    'night-dark': {
+      base: 'vs-dark',
+      inherit: true,
+      rules: [],
+      colors: {
+        'editor.background': '#202124',
+      },
+    },
+  },
   },
 
   defaultFnName,
@@ -119,6 +134,27 @@ const config = {
     monacoBase: '/monaco-editor/vs',
     octocatIcon: '/icons/octocat.png',
     telegramIcon: '/icons/telegram.png',
+  },
+
+  supportedThemeModes: ['dark', 'light'],
+
+  additionalStylesForLineChartDarkMode: {
+    textColor: '#FFFFFF',
+    grid: {
+      line: {
+        stroke: '#181414',
+      },
+    },
+    crosshair: {
+      line: {
+        stroke: '#f50057',
+      },
+    },
+    tooltip: {
+      container: {
+        background: '#181414',
+      },
+    },
   },
 
   maxAcceptableExecutionTime: 2500,
