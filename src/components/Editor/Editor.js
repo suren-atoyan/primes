@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Loading from 'components/Loading';
 
 import { monacoEditor as monaco } from 'utils';
 import { useMount, useUpdate } from 'utils/hooks';
@@ -56,7 +56,8 @@ const Editor =
     editorDidMount &&
     editorDidMount(editorRef.current.getValue.bind(editorRef.current), editorRef.current);
 
-    theme && monacoRef.current.editor.setTheme(theme);
+    monacoRef.current.editor.defineTheme('dark', config.editor.theme['night-dark']);
+    monacoRef.current.editor.setTheme(theme);
 
     setIsLoading(false);
   }
@@ -67,12 +68,7 @@ const Editor =
 
   return (
     <section className={classNames('full-size', classes.wrapper)}>
-      {isLoading && <div className={classes.preloader}>
-        <CircularProgress
-          size={100}
-          color="primary"
-        />
-      </div>}
+      {isLoading && <Loading />}
       <div
         ref={containerRef}
         className="full-size"
