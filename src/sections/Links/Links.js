@@ -18,7 +18,7 @@ import classNames from 'classnames';
 import config from 'config';
 
 const Links = _ => {
-  const { state: { themeMode }, actions: { setThemeMode } } = useStore();
+  const { state: { themeMode, isEditorReady }, actions: { setThemeMode } } = useStore();
   const classes = useStyles();
 
   function handleThemeSwitch(ev) {
@@ -37,6 +37,7 @@ const Links = _ => {
     <div className={classes.themeSwitch}>
       <LightIcon />
       <Switch
+        disabled={!isEditorReady}
         onClick={handleThemeSwitch}
         checked={themeMode === 'dark'}
         color="primary"
