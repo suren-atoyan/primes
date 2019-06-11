@@ -26,6 +26,8 @@ const initialState = {
     to: 25,
   },
 
+  themeMode: localStorage.getItem('themeMode') || 'light',
+
   isEditorReady: false,
   isRunnerActive: false,
 
