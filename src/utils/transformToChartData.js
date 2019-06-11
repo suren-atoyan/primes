@@ -17,7 +17,7 @@ const genPrimeUpperBoundChartData = list => ({
 });
 
 const genCustomSequenceChartData = list => ({
-  id: 'customSequence',
+  id: 'custom',
   color: 'red',
   data: list.map((item, i) => ({ x: i + 1, y: item })),
 });

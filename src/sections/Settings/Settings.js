@@ -74,7 +74,7 @@ const Settings = _ => {
             color="primary"
           />
         }
-        label="Custom"
+        label="Custom Sequence"
       />
       <FormLabel component="legend">Choose range</FormLabel>
       <Range defaultValue={range.to} onChange={handleRangeChange} />
