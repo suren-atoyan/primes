@@ -8,7 +8,10 @@ import { ensureLastLine } from 'utils';
 
 const CodeEditor = _ => {
   const [, setGetter] = useEditor();
-  const { state: { customSequence: { formula } }, actions: { setIsEditorReady } } = useStore();
+  const {
+    state: { customSequence: { formula }, themeMode },
+    actions: { setIsEditorReady }
+  } = useStore();
 
   function editorDidMount(getter) {
     setGetter(_ => getter);
@@ -19,6 +22,7 @@ const CodeEditor = _ => {
     <Editor
       value={ensureLastLine(formula)}
       editorDidMount={editorDidMount}
+      theme={themeMode}
     />
   </div>;
 };
