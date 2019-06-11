@@ -12,11 +12,11 @@ const Links = _ => {
 
   return <div className={classNames('full-size', classes.wrapper)}>
     <Button target="_blank" rel="noreferrer" href={config.links.telegram}>
-      <img src="/icons/telegram.png" alt="telegram icon"/>
+      <img src={config.urls.telegramIcon} alt="telegram icon"/>
       Telegram
     </Button>
     <Button target="_blank" rel="noreferrer" href={config.links.github}>
-      <img src="/icons/octocat.png" alt="github icon"/>
+      <img src={config.urls.octocatIcon} alt="github icon"/>
       GitHub
     </Button>
   </div>
