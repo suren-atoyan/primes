@@ -21,7 +21,7 @@ const Graphic = ({ data, themeMode }) => {
     <LineChart
       data={transformToChartData(data)}
       theme={theme}
-    />;
+    />
   </Paper>;
 };
 
