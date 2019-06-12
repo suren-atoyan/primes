@@ -22,6 +22,10 @@
     "react-scripts": "3.0.1",
     "react-splitter-layout": "^4.0.0"
   },
+  "author": {
+    "name": "Suren Atoyan",
+    "url": "https://github.com/SurenAt93"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
