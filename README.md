@@ -1,7 +1,5 @@
 ## Primes
 
-#### WARNING: This project is still in the development stage
-
 It's a playground for examining and playing with prime numbers. It also gives an opportunity to write custom formulas and visualize the results.
 
 ### Demo
