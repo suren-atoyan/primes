@@ -13,7 +13,6 @@ import ensureLastLine from './ensureLastLine';
 import checkForNumericalSequence from './checkForNumericalSequence';
 import asyncComponentLoader from './asyncComponentLoader';
 import noop from './noop';
-import monacoEditor from './monacoEditor';
 import calcPrimes from './calcPrimes';
 
 export {
@@ -23,7 +22,6 @@ export {
   transformToChartData,
   checkForNumericalSequence,
   asyncComponentLoader,
-  monacoEditor,
   canUseMesh,
   runner,
   resetApp,

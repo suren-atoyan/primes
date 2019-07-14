@@ -32,6 +32,8 @@ const initialState = {
   isRunnerActive: false,
 
   notifications: config.notifications.defaultState,
+
+  execLanguage: config.defaultLanguage,
 };
 
 export { initialState, sharedState };

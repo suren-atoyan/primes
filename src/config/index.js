@@ -82,22 +82,6 @@ const config = {
     // to prime, just name it "${defaultFnName}". (and you can remove all comments and everything else from here :))
   `.trim().replace(/^ {4}/gm, ''),
 
-  editor: {
-    language: 'javascript',
-    value: '',
-
-    theme: {
-      'night-dark': {
-        base: 'vs-dark',
-        inherit: true,
-        rules: [],
-        colors: {
-          'editor.background': '#202124',
-        },
-      },
-    },
-  },
-
   defaultFnName,
 
   notifications: {
@@ -158,6 +142,8 @@ const config = {
   },
 
   maxAcceptableExecutionTime: 2500,
+
+  defaultLanguage: 'javascript',
 };
 
 export default config;

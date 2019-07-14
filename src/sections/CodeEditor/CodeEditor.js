@@ -2,14 +2,16 @@ import React from 'react';
 
 import { useStore } from 'store';
 import { useEditor } from 'utils/hooks';
-import Editor from 'components/Editor';
+import Editor from '@monaco-editor/react';
+
+import Paper from '@material-ui/core/Paper';
 
 import { ensureLastLine } from 'utils';
 
 const CodeEditor = _ => {
   const [, setGetter] = useEditor();
   const {
-    state: { customSequence: { formula }, themeMode },
+    state: { customSequence: { formula }, themeMode, execLanguage },
     actions: { setIsEditorReady }
   } = useStore();
 
@@ -18,13 +20,14 @@ const CodeEditor = _ => {
     setIsEditorReady(true);
   }
 
-  return <div className="full-size">
+  return <Paper className="full-size">
     <Editor
       value={ensureLastLine(formula)}
+      language={execLanguage}
       editorDidMount={editorDidMount}
       theme={themeMode}
     />
-  </div>;
+  </Paper>;
 };
 
 export default CodeEditor;
